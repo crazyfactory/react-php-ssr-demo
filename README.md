@@ -1,4 +1,4 @@
-# Demo for React SSR with PHP
+# Demo for React SSR + Redux with PHP
 
 ## Setup
 
