@@ -1,0 +1,4 @@
+{
+  "file": ["./development/docker/docker-compose.yml", "./development/docker/docker-compose.local.yml"],
+  "service": "php-fpm"
+}

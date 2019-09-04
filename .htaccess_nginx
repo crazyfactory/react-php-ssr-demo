@@ -1,0 +1,4 @@
+# Deny access
+if ($request_uri ~ (composer.json|composer.lock|package.json|package-lock.json|.htaccess|.htaccess_nginx|LICENSE|.travis.yml|phpunit.xml|Vagrantfile|docker-project.json|Gruntfile.js|tsconfig.js)) {
+    return 403;
+}
