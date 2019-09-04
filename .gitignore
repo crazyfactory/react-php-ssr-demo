@@ -43,3 +43,7 @@ build/Release
 !.idea/inspectionProfiles/
 .awcache/
 .jest/cache/
+
+# Manifest
+client.manifest.json
+server.manifest.json

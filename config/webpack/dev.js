@@ -1,5 +1,6 @@
 const path = require('path');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -10,7 +11,7 @@ module.exports = {
     modules: [path.resolve(__dirname), 'node_modules', 'app', 'app/redux'],
   },
   externals: {
-    react: 'React',
+    'react': 'React',
     'react-dom': 'ReactDOM'
   },
   entry: {
@@ -31,5 +32,9 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
+    new ManifestPlugin({
+      publicPath: '/build/',
+      fileName: 'client.manifest.json'
+    })
   ]
 };

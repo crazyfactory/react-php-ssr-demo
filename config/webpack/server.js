@@ -1,6 +1,7 @@
 const glob = require('glob');
 const path = require('path');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const entry = glob.sync(path.resolve('./src/servers/**/*.tsx')).reduce(
   (x, y) => ({...x, [y.substring(y.lastIndexOf('/') + 1, y.indexOf('.tsx'))]: y}), {}
@@ -30,5 +31,9 @@ module.exports = {
   },
   plugins: [
     new CheckerPlugin(),
+    new ManifestPlugin({
+      publicPath: '/build/',
+      fileName: 'server.manifest.json'
+    })
   ]
 };
