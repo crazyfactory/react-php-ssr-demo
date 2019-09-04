@@ -8,6 +8,7 @@ Create `./development/docker/docker-compose.local.yml`
 
 Open terminal and run
 ```
+$ composer install
 $ npm install
 $ npm install -g @crazyfactory/docker-project-cli
 $ dopr pull
