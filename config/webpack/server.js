@@ -1,5 +1,10 @@
-var path = require('path');
-var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const glob = require('glob');
+const path = require('path');
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+
+const entry = glob.sync(path.resolve('./src/servers/**/*.tsx')).reduce(
+  (x, y) => ({...x, [y.substring(y.lastIndexOf('/') + 1, y.indexOf('.tsx'))]: y}), {}
+);
 
 module.exports = {
   devtool: 'source-map',
@@ -9,11 +14,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
     modules: [path.resolve(__dirname), 'node_modules', 'app', 'app/redux'],
   },
-  entry: {
-    'increment-server': path.resolve('./src/servers/increment-server.tsx'),
-    'decrement-server': path.resolve('./src/servers/decrement-server.tsx'),
-    'offset-server': path.resolve('./src/servers/offset-server.tsx'),
-  },
+  entry,
   output: {
     path: path.resolve('./build'),
     filename: "[name].js"

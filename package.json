@@ -25,6 +25,7 @@
     "@types/react-redux": "^7.1.2",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
+    "glob": "^7.1.4",
     "redux-logger": "^3.0.6",
     "typescript": "^3.6.2",
     "webpack": "^4.39.3",

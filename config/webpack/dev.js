@@ -1,5 +1,5 @@
-var path = require('path');
-var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+const path = require('path');
+const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
 module.exports = {
   devtool: 'source-map',
