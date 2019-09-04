@@ -3,6 +3,7 @@ var CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 
 module.exports = {
   devtool: 'source-map',
+  watch: true,
   mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
